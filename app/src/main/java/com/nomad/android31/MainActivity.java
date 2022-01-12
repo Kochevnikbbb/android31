@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity {
         Glide.with(this).load("https://i.pinimg.com/474x/23/ab/a6/23aba60b66ef08174bb7455c4a8a2d2f.jpg").into(image);
         
         btnGo.setOnClickListener(view -> {
-            if (userName.getText().toString() != null && password.getText().toString().length() > 5){
+            if (userName.getText().toString().length() > 0 && password.getText().toString().length() > 5){
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                String user = userName.getText().toString();
-                String pass = password.getText().toString();
-                intent.putExtra(user,"user");
-                intent.putExtra(pass,"pass");
+                //String user = userName.getText().toString();
+                //String pass = password.getText().toString();
+                intent.putExtra("user",userName.getText().toString());
+                intent.putExtra("pass",password.getText().toString());
                 startActivity(intent);
 
 
